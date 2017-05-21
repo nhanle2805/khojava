@@ -10,9 +10,31 @@
  */
 public class example72 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form example72
-     */
+     private  float TinhTien(float tongSoDien){
+        float iTongSoDien = tongSoDien;
+        float iThanhTien = 0f ;
+        
+		if ( iTongSoDien >300  ){
+			iThanhTien+=(iTongSoDien-300)*4000;
+                        iTongSoDien=300;
+                }
+                if(iTongSoDien >200)
+                {
+                    iThanhTien+=(iTongSoDien-200)*2500;
+                    iTongSoDien=200;
+                }
+                if(iTongSoDien >100)
+                {
+                    iThanhTien+=(iTongSoDien-100)*200;
+                    iTongSoDien=100;
+                }
+                if(iTongSoDien >50)
+                {
+                    iThanhTien+=(iTongSoDien-50)*100;
+                    iTongSoDien=50;
+                }
+                iThanhTien+=iTongSoDien*500;
+                return iThanhTien;}
     public example72() {
         initComponents();
     }
@@ -127,6 +149,7 @@ public class example72 extends javax.swing.JFrame {
         int c= b-a;
         txtTongSoDien.setText(c +"");
         float ThanhTien = 0;
+        ThanhTien = TinhTien(c);
         txtThanhTien.setText(ThanhTien +"");
     }//GEN-LAST:event_btnTinhActionPerformed
 
@@ -165,30 +188,7 @@ public class example72 extends javax.swing.JFrame {
         });
     }
     
-    private  float TinhTien(float tongSoDien){
-        float iTongSoDien = tongSoDien;
-        float iThanhTien = 0f ;
-		if ( iTongSoDien >300  ){
-			iThanhTien+=(iTongSoDien-300)*4000;
-                        iTongSoDien=300;
-                }
-                if(iTongSoDien >200)
-                {
-                    iThanhTien+=(iTongSoDien-200)*2500;
-                    iTongSoDien=200;
-                }
-                if(iTongSoDien >100)
-                {
-                    iThanhTien+=(iTongSoDien-100)*200;
-                    iTongSoDien=100;
-                }
-                if(iTongSoDien >50)
-                {
-                    iThanhTien+=(iTongSoDien-50)*100;
-                    iTongSoDien=50;
-                }
-                iThanhTien+=iTongSoDien*500;
-                return iThanhTien;
+   
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnTinh;
